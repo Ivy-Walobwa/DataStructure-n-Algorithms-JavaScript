@@ -1,6 +1,6 @@
 # Data Structures and Algorithms in JavaScript :rocket:
 ---
-##Linked Lists
+## Linked Lists
 
 **Operations Implemented**
 
@@ -16,4 +16,4 @@
 
 ---
 
-##Stack
+## Stack
