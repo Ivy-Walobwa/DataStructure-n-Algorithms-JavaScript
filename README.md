@@ -2,7 +2,7 @@
 
 ## Linked Lists
 
-**Operations Implemented**
+**Implementations**
 
 1. Add
     * Add to start of list
@@ -18,10 +18,9 @@
 
 Implemented with linked list and array as storage mechanisms.
 
-**Operations Implemented**
+**Implementations**
 
 1. Push
 2. Pop
 3. Peek
-4. Count
-5. Clear
+4. Postfix Algorithm
