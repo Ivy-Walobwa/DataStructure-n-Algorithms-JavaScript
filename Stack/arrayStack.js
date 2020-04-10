@@ -1,41 +1,47 @@
 class Stack {
-    constructor() {
-        this.items = [];
-        this.size = -1;
-    }
+  constructor() {
+    this.items = [];
+    this.size = -1;
+  }
 
-    push(data) {
-        if (data) {
-            this.items.push(data);
-            this.size++;
-        }
-        return;        
+  push(data) {
+    //if an item is provided
+    if (data) {
+      //add item to array
+      this.items.push(data);
+      //increase size
+      this.size++;
     }
+    return;
+  }
 
-    pop() {
-        if (this.items.length === 0) {
-            return "UnderFlow";
-        } else {
-            this.size--;
-           return this.items.pop();
-        }
+  pop() {
+    //if empty
+    if (this.size === -1) {
+      return "UnderFlow";
+    } else {
+      this.size--;
+      //return top item in stack
+      return this.items.pop();
     }
+  }
 
-    peek() {
-        if (this.size === -1) {
-            return "Empty stack";
-        }
-        return this.items[this.size];        
+  peek() {
+    //if empty
+    if (this.size === -1) {
+      return "Empty stack";
     }
+    //return top item in stack
+    return this.items[this.size];
+  }
 }
 
-
 // let stack = new Stack();
-// stack.push();
-// stack.push();
-// stack.push();
-// console.log(stack.pop());
-// console.log(stack.peek());
-// console.log(stack)
+// stack.push(3);
+// stack.push(5);
+// stack.push(7);
+// console.log(stack.pop());//7
+// console.log(stack.peek());//5
+// console.log(stack)//[3, 5]
 
 module.exports = Stack;

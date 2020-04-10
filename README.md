@@ -24,3 +24,14 @@ Implemented with linked list and array as storage mechanisms.
 2. Pop
 3. Peek
 4. Postfix Algorithm
+
+## Queue
+
+Implemented with linked list and array as storage mechanisms.
+
+**Implementations**
+
+1. Enqueue
+2. Dequeue
+3. Peek
+4. Priority Queue

@@ -121,4 +121,3 @@ console.log(list);
 
 list.printListData();
 
-
