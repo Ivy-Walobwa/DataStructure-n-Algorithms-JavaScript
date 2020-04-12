@@ -9,6 +9,7 @@ class Queue{
     }
 
     dequeue() {
+        //if empty do nothing else remove first item
         if (this.items.length === 0) {
             return;
         }
@@ -16,6 +17,7 @@ class Queue{
     }
 
     peek() {
+        //if not empty return first item
         if (this.items.length === 0) {
             return "Empty queue";
         }
