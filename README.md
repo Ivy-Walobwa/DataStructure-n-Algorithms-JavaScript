@@ -35,3 +35,13 @@ Implemented with linked list and array as storage mechanisms.
 2. Dequeue
 3. Peek
 4. Priority Queue
+
+## Binary Search Tree
+**Implementations**
+1. Add
+2. Find
+3. Remove
+3. Tree Traversal
+   * pre-order
+   * in-order
+   * post-order
