@@ -1,4 +1,5 @@
 
+
 class Node{
     constructor(data) {
         this.data = data;
@@ -22,18 +23,22 @@ class BinaryTree{
         }
     }
 
-    _addTo(rootNode, newNode) {
-        if (newNode.data < rootNode.data) {
-            if (rootNode.left === null) {
-                rootNode.left = newNode;
+    _addTo(currentNode, newNode) {
+        if (newNode.data < currentNode.data) {
+            if (currentNode.left === null) {
+                //if new node is less than the current node
+                //add to left
+                currentNode.left = newNode;
             } else {
-                this._addTo(rootNode.left, newNode);
+                this._addTo(currentNode.left, newNode);
             }
         } else {
-            if (rootNode.right === null) {
-                rootNode.right = newNode;
+            //if new node is greater than/ equal to the current node
+            //add to right
+            if (currentNode.right === null) {
+                currentNode.right = newNode;
             } else {
-                this._addTo(rootNode.right, newNode);
+                this._addTo(currentNode.right, newNode);
             }
             
         }
@@ -59,7 +64,7 @@ class BinaryTree{
                 break;
             }
         }
-        return[ current, parent];
+        return[ current, parent ];
     }
 
     find(data) {
@@ -79,11 +84,12 @@ class BinaryTree{
         //its left child replaces the removed node
         if (current.right === null) {
             if (parent === null) {
-                //we are removing root node
+                //if we are removing root node
                 this.root = current.left;
             } else {
                 if (parent.data > current.data) {
                     //make current left child, left child of parent
+                    //rare case
                     parent.left = current.left;
                 } else if (parent.data < current.data) {
                     //make current left child, right child of parent
@@ -96,6 +102,7 @@ class BinaryTree{
         //removing node whose right child has no left child
         //right child replaces the removed node
         else if (current.right.left === null) {
+            //move removed node left child to the left of removedd's right
             current.right.left = current.left;
             if (parent === null) {
                 this.root = current.right;
@@ -113,12 +120,13 @@ class BinaryTree{
         
         //CASE 3
         //if removed node's right child has a left child
-        //replace removed with it's right child's left most node
+        //replace removed with its right child's left most node
         else {
             //find right leftmost child
             let leftMost = current.right.left;
             let leftMostParent = current.right;
             while (leftMost.left != null) {
+                //move to the left most node of the right child
                 leftMostParent = leftMost;
                 leftMost = leftMost.left;
             }
@@ -144,6 +152,34 @@ class BinaryTree{
 
     }
 
+    //TREE TRAVERSAL
+    preorder(current) {
+        if (current === null) {
+            return;
+        }
+        console.log(current.data);
+        this.preorder(current.left);
+        this.preorder(current.right);
+    }
+
+    postorder(current) {
+        if (current === null) {
+            return;
+        }
+        this.postorder(current.left);
+        this.postorder(current.right);
+        console.log(current.data);
+    }
+
+    inorder(current) {
+        if (current === null) {
+            return;
+        }
+        this.inorder(current.left);
+        console.log(current.data);
+        this.inorder(current.right);
+    }
+
 }
 
 const tree = new BinaryTree();
@@ -153,7 +189,10 @@ tree.add(1);
 tree.add(3);
 tree.add(6);
 tree.add(5);
-tree.add(7);
-tree.remove(4)
-console.log(tree.find(6));
- console.log(tree);
+tree.add(7)
+tree.find(6);
+tree.remove(6)
+ 
+tree.postorder(tree.root) // 1 3 2 5 7 6 4
+tree.preorder(tree.root) // 4 2 1 3 6 5 7
+tree.inorder(tree.root) // 1 2 3 4 5 6 7
