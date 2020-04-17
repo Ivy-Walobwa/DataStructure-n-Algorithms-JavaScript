@@ -25,10 +25,8 @@ class HashTable{
 
         for (i = 0; i < val.length; i++) {
             character = val.charCodeAt(i);
-            // <<  bitwise operator
             hashCode = ((hashCode << 5) - hashCode) + character;
             hashCode = hashCode & hashCode;
-            
         }
 
         return hashCode % this.maxBucketCount;
@@ -46,10 +44,10 @@ class HashTable{
 
         // if an element exists at hashcode of key, but keys are same
         // update key with given data
-        // if (this.buckets[hashCode].key === key) {
-        //     this.buckets[hashCode].data = data;
-        //     return;
-        // }
+        if (this.buckets[hashCode].key === key) {
+            this.buckets[hashCode].data = data;
+            return;
+        }
 
         // if an element exists at hashcode of key, but keys are different
         // collision has occured
