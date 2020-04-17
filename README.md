@@ -45,3 +45,11 @@ Implemented with linked list and array as storage mechanisms.
    * pre-order
    * in-order
    * post-order
+
+
+## Hash Tables
+**Implementations**
+1. Hashing
+2. Add
+3. Remove
+4. Find
