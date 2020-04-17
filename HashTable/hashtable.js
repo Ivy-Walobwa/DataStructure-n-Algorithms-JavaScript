@@ -32,10 +32,11 @@ class HashTable{
         return hashCode % this.maxBucketCount;
     };
 
-
+ // add key/data pair to bucket
     add(key, data) {
         let newNode = new Node(key, data);
-        let hashCode = this.hashCode(key);
+        let hashCode = this.hashCode(key); // get hashcode of key
+
         // if no element exists at hashcode of key, add to table
         if (this.buckets[hashCode] === undefined) {
             this.buckets[hashCode] = newNode;
@@ -61,24 +62,22 @@ class HashTable{
     }
 
     remove(key) {
-        let hashCode = this.hashCode(key);
-        let first = this.buckets[hashCode]
-        if (first!== undefined) {
+        let hashCode = this.hashCode(key); // get hashcode of key
+        let first = this.buckets[hashCode] //select key/data pair at index
 
+        if (first !== undefined) {
             // if it exists and no has linked list at index
             // (A)
             if (first.next === null) {
-                this.buckets[hashCode] = undefined;
+                this.buckets[hashCode] = undefined; // remove item
                 return;
             } else {
                 while (first !== null && first.next !== null && first.key !== key) {
                     first = first.next;
                 }
-
                 // if removed is first node in list
-                // (A) - B - C
+                // (A) - B - C - D
                 if (first.previous === null && first.next !==null) {
-                  
                     while (first.next !== null) {
                         first.key = first.next.key;
                         first.data = first.next.data;
@@ -86,16 +85,9 @@ class HashTable{
                         first.next.previous.key = first.key
                         first = first.next;
                     }
-                    // first.next.key = first.next.next.key;
-                    // first.next.data = first.next.next.data;
-                    // // first.next.next.previous.key = first.key
-                    // // first.next.next.previous.data = first.data
-                    // first.next = first.next.next
-                    // return;
-                   
                 }
 
-                // if last node in list
+                // if removed is last node in list
                 // A - B - (C)
                 if (first.previous !== null && first.next === null) {
                     first.previous.next = null
@@ -103,7 +95,7 @@ class HashTable{
                     return;
                 }
                 
-                // if middle node
+                // if removed is middle node
                 // A - (B) - C
                 if (first.previous !== null && first.next !== null) {
                     first.previous.next = first.next;
@@ -113,7 +105,6 @@ class HashTable{
                 }
                 return;
             }
-            
         }
         return undefined;
     }
@@ -149,3 +140,7 @@ hashTable.add(2, '5')
 hashTable.add(2, '6')
 hashTable.add(2, '7')
 console.log(hashTable.find(2))
+
+while (array[index] !== null)
+    index++
+array[index] = item    
