@@ -53,3 +53,11 @@ Implemented with linked list and array as storage mechanisms.
 2. Add
 3. Remove
 4. Find
+
+## Sorting Algorithms
+**Implementations**
+1. Bubble sort
+2. Selection Sort
+3. Insertion Sort
+4. Merge Sort
+5. Quick Sort
