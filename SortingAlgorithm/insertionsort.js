@@ -1,13 +1,13 @@
 function insertionSort(arr) {
     for (let i = 1; i < arr.length; i++){
         let unsorted = arr[i];
-        let sortedIdx = i - 1;
+        let idx = i - 1;
 
-        while (sortedIdx >= 0 && unsorted < arr[sortedIdx]) {
-            arr[sortedIdx + 1] = arr[sortedIdx];
-            sortedIdx -= 1;
+        while (idx >= 0 && unsorted < arr[idx]) {
+            arr[idx + 1] = arr[idx];
+            idx -= 1;
         }
-        arr[sortedIdx + 1] = unsorted;
+        arr[idx + 1] = unsorted;
     }
     return arr;
 }
