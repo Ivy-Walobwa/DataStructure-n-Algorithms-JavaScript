@@ -182,17 +182,19 @@ class BinaryTree{
 
 }
 
-const tree = new BinaryTree();
-tree.add(4);
-tree.add(2);
-tree.add(1);
-tree.add(3);
-tree.add(6);
-tree.add(5);
-tree.add(7)
-tree.find(6);
-tree.remove(6)
+// const tree = new BinaryTree();
+// tree.add(4);
+// tree.add(2);
+// tree.add(1);
+// tree.add(3);
+// tree.add(6);
+// tree.add(5);
+// tree.add(7)
+// tree.find(6);
+// tree.remove(6)
  
-tree.postorder(tree.root) // 1 3 2 5 7 6 4
-tree.preorder(tree.root) // 4 2 1 3 6 5 7
-tree.inorder(tree.root) // 1 2 3 4 5 6 7
+// tree.postorder(tree.root) // 1 3 2 5 7 6 4
+// tree.preorder(tree.root) // 4 2 1 3 6 5 7
+// tree.inorder(tree.root) // 1 2 3 4 5 6 7
+
+module.exports = BinaryTree;
