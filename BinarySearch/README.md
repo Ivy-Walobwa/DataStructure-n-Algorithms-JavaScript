@@ -2,8 +2,9 @@
 
 A search algorithm used with a sorted list of items by eliminating half of the elements every time.
 
-Input - Sorted list of elements , target element
-Output - position of found element or null if not found
+- Input - Sorted list of elements , target element
+
+- Output - position of found element or null if not found
 
 ## Algorithm
 

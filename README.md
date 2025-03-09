@@ -8,7 +8,7 @@ Data Structures and Algorithms implemented in:
 
 Implemented Algorithms:
 
-- Binary Search
+1. Binary Search
 
 **Note** - the algorithms/data structures below are currently implemented in JS. An update is pending and in progress.
 
