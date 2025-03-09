@@ -1,4 +1,16 @@
-# Data Structures and Algorithms in JavaScript :rocket:
+# Data Structures and Algorithms :rocket:
+
+Data Structures and Algorithms implemented in:
+
+1. JavaScript
+2. Python
+3. R
+
+Implemented Algorithms:
+
+- Binary Search
+
+**Note** - the algorithms/data structures below are currently implemented in JS. An update is pending and in progress.
 
 ## Linked Lists
 
