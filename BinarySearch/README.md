@@ -15,3 +15,5 @@ A search algorithm used with a sorted list of items by eliminating half of the e
    3. if elements[mid] is higher than target, update high index (mid - 1)
    4. else, update low index (mid + 1)
 3. If loop ends without finding target, return null
+
+Time Complexity: O(log n)
